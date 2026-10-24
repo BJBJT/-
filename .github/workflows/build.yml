@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q ModelHubAndroid.zip
+      - run: printf 'android.useAndroidX=true\norg.gradle.jvmargs=-Xmx3g\n' > ModelHubAndroid/gradle.properties
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
